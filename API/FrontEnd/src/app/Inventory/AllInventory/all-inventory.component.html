@@ -1,0 +1,43 @@
+<div class="table-responsive">
+    <!--Table-->
+    <table class="table table-striped table-hover">
+  
+      <!--Table head-->
+      <thead>
+        <tr>
+          <th>Publish </th>
+          <th>Vehicle</th>
+          <th>Price</th>
+          <th>Odometer</th>
+          <th>Age</th>
+          <th></th>
+          <th><button type="button" class="btn btn-outline-primary" [routerLink]="['/inventory/addinventory']" routerLinkActive="router-link-active" >Add Inventory</button></th>
+        </tr>
+      </thead>
+      <!--Table head-->
+  
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor ='let inventory of inventory'>       
+            <th>
+              <label class="form-switch" >
+              <input type= "checkbox" [(ngModel)]="inventory.published"
+              (change)="publishEvent2(inventory.vehicleid,inventory)">
+                <i></i> 
+            </label>
+          </th>
+              
+          <td>{{inventory.make}} {{inventory.model}} </td>
+          <td>{{inventory.egc_price | currency:"AUD":"symbol":"1.2-2"}}</td>
+          <td>{{inventory.odometer}}</td>
+          <td>{{dateCalculation(inventory.date_created)}}</td>
+
+       
+          <th><button type="button" class="btn btn-success" [routerLink]="['/inventory/editinventory',inventory.vehicleid]" routerLinkActive="router-link-active" > Edit Vehicle</button><br><br></th>        
+      
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>

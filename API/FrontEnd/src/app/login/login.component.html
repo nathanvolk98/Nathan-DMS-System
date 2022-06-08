@@ -1,0 +1,52 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form (ngSubmit) = "login()" 
+          [formGroup]= 'loginForm'>
+          <div *ngIf="loginAttemptFailed">
+            <h5>Invalid username and password Please try again</h5>
+
+          </div>
+            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+  
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input class="form-control"
+              type="text"  id="username"  formControlName="username"
+                placeholder="Enter a valid Username" />
+              <label class="form-check-label" for="form2Example3"></label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input class="form-control" type="password" id="password" formControlName="password"
+                placeholder="Enter password" />
+              <label ></label>
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" id="form2Example3"  formControlName="remember_me" />
+                <label  class="form-check-label" for="form2Example3" >
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" type= "submit" [disabled]='!loginForm.valid'>Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                  class="link-danger">Register</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

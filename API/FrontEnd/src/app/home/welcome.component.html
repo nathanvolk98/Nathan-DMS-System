@@ -1,0 +1,27 @@
+﻿<div class="container-fluid d-flex justify-content-center" >
+    <div class="row mt-4" *ngFor='let vehicle of vehicle'>
+        <div class="col-sm-3" >
+            <div class="card">
+                <div class="card-body pt-1 px-0">
+                
+                    <div class="d-flex flex-row justify-content-between mb-1 px-3"> <small class="text-muted mt-2">STARTING AT</small>
+                        <h4>&dollar;{{vehicle.egc_price}}&ast;</h4>
+                    </div>
+                    <hr class="mt-3 mx-4">
+                    <div class="d-flex flex-row justify-content-between px-3 pb-4">
+                        <div class="d-flex flex-column">
+                            <h5 class="mb-1">{{vehicle.model_built_year}} {{vehicle.make}} {{vehicle.model}}</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between p-4 mid">
+                        <div class="d-flex flex-column"><small class="text-muted mb-1"></small>
+                            <div class="d-flex flex-row">
+                                <div class="d-flex flex-column ml-2"><small class="ghj">{{vehicle.odometer}} KM</small></div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                    <div class="mx-3 mt-3 mb-2"><button type="button" class="btn btn-danger btn-block" (click) ="navigate(vehicle.vehicleid,vehicle.dealerid)"  ><small>Enquire Now</small></button></div>
+                </div>
+                
+            </div>

@@ -1,0 +1,67 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+    <form 
+    (ngSubmit) = "addProspect()" 
+    [formGroup]= 'prospectForm'> 
+
+    <div class="form-row" [ngClass]="{'has-error': prospectForm.controls.customer_fullname.invalid
+    && prospectForm.controls.customer_number.dirty}">
+      <div class="col-md-4 mb-3">
+        <label for="make">Name</label>
+        <input 
+        class="form-control" 
+        type="text" 
+        id="customer_fullname" 
+        placeholder="Your name is Required" 
+        formControlName="customer_fullname">
+        <div *ngIf="prospectForm.controls.customer_fullname.dirty" class="has-error">
+          <div *ngIf="prospectForm.controls.customer_fullname.errors?.required" class="text-danger" >Your name is required.</div>
+          <div *ngIf="prospectForm.controls.customer_fullname.errors?.minlength" class="text-danger" >Your name must be at least two characters long</div>
+      </div>
+    </div>
+    </div>
+  
+    <div class="form-row" [ngClass]="{'has-error': prospectForm.controls.customer_number.invalid
+    && prospectForm.controls.customer_number.dirty}">
+      <div class="col-md-4 mb-3">
+        <label for="make">Number</label>
+        <input 
+        class="form-control" 
+        type="text" 
+        id="customer_number" 
+        placeholder="Your number is Required" 
+        formControlName="customer_number">
+        <div *ngIf="prospectForm.controls.customer_number.dirty" class="has-error">
+          <div *ngIf="prospectForm.controls.customer_number.errors?.required" class="text-danger" >Your number is required.</div>
+          <div *ngIf="prospectForm.controls.customer_number.errors?.minlength" class="text-danger" >Your number is invalid, please try again</div>
+      </div>
+    </div>
+    </div>
+
+    <div class="form-row" [ngClass]="{'has-error': prospectForm.controls.customer_email.invalid
+    && prospectForm.controls.customer_email.dirty}">
+      <div class="col-md-4 mb-3">
+        <label for="make">Email Address</label>
+        <input 
+        class="form-control" 
+        type="text" 
+        id="customer_email" 
+        placeholder="Your email address is Required" 
+        formControlName="customer_email">
+        <div *ngIf="prospectForm.controls.customer_email.dirty" class="has-error">
+          <div *ngIf="prospectForm.controls.customer_email.errors?.required" class="text-danger" >Your email is required.</div>
+          <div *ngIf="prospectForm.controls.customer_email.errors?.minlength" class="text-danger" >Your email is invalid, please try again</div>
+      </div>
+      <div>
+      <button class="btn btn-outline-primary" style="margin:5px;" type="submit" [disabled]='!prospectForm.valid'>Send Enquiry</button>    
+    </div>
+    </div>
+    </div>
+    
+  </form> 
+</div>
+</div>
+</div>

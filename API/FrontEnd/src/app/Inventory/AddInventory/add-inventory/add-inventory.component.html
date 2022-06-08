@@ -1,0 +1,227 @@
+<div class="card-body">
+  <form 
+  (ngSubmit) = "addVehicle()" 
+  [formGroup]= 'vehicleForm'> 
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.make.invalid
+  && vehicleForm.controls.make.dirty}">
+    <div class="col-md-4 mb-3">
+      <label for="make">Make</label>
+      <input 
+      class="form-control" 
+      type="text" 
+      id="make" 
+      placeholder="Vehicle Make(required)" 
+      formControlName="make">
+      <div *ngIf="vehicleForm.controls.make.dirty" class="has-error">
+        <div *ngIf="vehicleForm.controls.make.errors?.required" class="text-danger" >Vehicle Make is required.</div>
+        <div *ngIf="vehicleForm.controls.make.errors?.minlength" class="text-danger" >Vehicle Make must be at least two characters long</div>
+    </div>
+  </div>
+  </div>
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.model.invalid
+  && vehicleForm.controls.model.dirty}">
+    <div class="col-md-4 mb-3">
+    <label for="make">Model</label>
+      <input class="form-control" 
+      type="text" 
+      id="model" 
+      placeholder="Vehicle Model(required)" 
+      formControlName="model" >
+        <div *ngIf="vehicleForm.controls.model.dirty" class="has-error">
+        <div *ngIf="vehicleForm.controls.model.errors?.required" class="text-danger" >Vehicle Model is required.</div>
+        <div *ngIf="vehicleForm.controls.model.errors?.minlength" class="text-danger" >Vehicle Model must be at least two characters long</div>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.model_built_year.invalid
+  && vehicleForm.controls.model_built_year.dirty}">
+    <div class="col-md-4 mb-3">
+      <label for="model_built_year">Year</label>
+      <input class="form-control" 
+      type="text" 
+      id="model_built_year" 
+      placeholder="Model Year(required)"
+      formControlName="model_built_year">
+        <div *ngIf="vehicleForm.controls.model_built_year.dirty" class="has-error">
+        <div *ngIf="vehicleForm.controls.model_built_year.errors?.required" class="text-danger" >Vehicle Year is required.</div>
+        <div *ngIf="vehicleForm.controls.model_built_year.errors?.range" class="text-danger" >Vehicle year must range between 1910-2022</div>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.odometer.invalid
+  && vehicleForm.controls.odometer.dirty}" >
+    <div class="col-md-3 mb-3">
+      <label for="odometer">Odometer</label>
+      <input class="form-control" 
+      type="text" 
+      id="odometer" 
+      placeholder="required" 
+      formControlName="odometer">
+        <div *ngIf="vehicleForm.controls.odometer.dirty" class="has-error" >
+        <div *ngIf="vehicleForm.controls.odometer.errors?.required"  class="text-danger" > Odometer is required.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.registration_number.invalid
+  && vehicleForm.controls.registration_number.dirty}">
+    <div class="col-md-3 mb-3">
+      <label for="make">Registration Number</label>
+      <input class="form-control" 
+      type="text" 
+      id="registration_number" 
+      placeholder="Registration Number(required)" 
+      formControlName="registration_number">
+      <div *ngIf="vehicleForm.controls.registration_number.dirty" class="has-error">
+      <div *ngIf="vehicleForm.controls.registration_number.errors?.required" class="text-danger" > Registration number is required.</div>
+    </div>
+    </div>
+  </div>
+
+  <div class="form-row" [ngClass]="{'has-error': vehicleForm.controls.egc_price.invalid
+  && vehicleForm.controls.egc_price.dirty}">
+    <div class="col-md-3 mb-3">
+      <label for="make">EGC Price</label>
+      <input class="form-control" 
+      type="text" 
+      id="egc_price" 
+      placeholder="EGC Price(required)" 
+      formControlName="egc_price">
+      <div *ngIf="vehicleForm.controls.egc_price.dirty" class="has-error">
+      <div *ngIf="vehicleForm.controls.egc_price.errors?.required" class="text-danger" > EGC Price is required.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col-md-3 mb-3">
+      <label for="make">DAP Price</label>
+      <input class="form-control" 
+      type="text" 
+      formControlName="dap_price" 
+      id="dap_price"  >
+    </div>
+  </div>
+
+    <div class="form-group">
+      <div class="col-md-15 mb-3">
+      <label for="doors">Doors</label>
+      <select class="form-control"
+      formControlName="doors"
+      id="doors"
+      id="optionWidth"
+      name="optionWidth">
+      
+
+      <option value=""
+                        disabled
+                        selected
+                        hidden>Select the number of Doors</option>
+        <option>2</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-15 mb-3">
+    <label for="Seats">Seats</label>
+    <select class="form-control" 
+    id="seats"
+    id="optionWidth"
+      name="optionWidth"
+    formControlName="seats">
+        <option value=""
+                        disabled
+                        selected
+                        hidden>Select the number of Seats</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+    </select>
+  </div>
+</div>
+
+    <div class="form-group">
+      <div class="col-md-15 mb-3">
+        <label for="body_type">Body Type</label>
+      <select class="form-control" 
+      id="body_type"
+      id="optionWidth"
+      name="optionWidth"
+      formControlName="body_type">
+        <option value=""
+                        disabled
+                        selected
+                        hidden>Select a Body type</option>
+        <option>Cab Chassis</option>
+        <option>Convertible</option>
+        <option>Coupe</option>
+        <option>Hatch</option>
+        <option>People Mover</option>
+        <option>Sedan</option>
+        <option>SUV</option>
+        <option>Ute</option>
+        <option>Van</option>
+        <option>Wagon</option>
+      </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-15 mb-3">
+        <label for="fuel_type">Fuel Type</label>
+      <select class="form-control" 
+      id="fuel"
+      id="optionWidth"
+      name="optionWidth"
+      formControlName="fuel">
+        <option value=""
+                        disabled
+                        selected
+                        hidden>Select a Fuel type</option>
+        <option>Diesel</option>
+        <option>Dual Fuel</option>
+        <option>Electric</option>
+        <option>Gas Only</option>
+        <option>Hybrid</option>
+        <option>Petrol</option>
+      </select>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <div class="col-md-13 mb-3">
+      <label for="transmission">Transmission</label>
+      <select class="form-control" 
+      id="transmission"
+      id="optionWidth"
+      name="optionWidth"
+      formControlName="transmission">
+        <option value=""
+                        disabled
+                        selected
+                        hidden>Select a Fuel type</option>
+        <option>Manuel</option>
+        <option>Automatic</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="btn btn-outline-primary" style="margin:5px;" type="submit" [disabled]='!vehicleForm.valid'>Save</button>
+  <button class="btn btn-outline-danger"
+                style="margin:5px;"
+                (click)='onBack()' >
+            <i class = 'fa fa-chevron-left'></i> Cancel
+        </button></form>
+</div>
+

@@ -1,0 +1,19 @@
+[
+    {
+    
+    "ProspectID":"1",
+    "FirstName":"Nathan",
+    "LastName": "Volk",
+    "Email":"nathanvolk98@gmail.com",
+    "VehicleID": "1",
+    "UserID":"1"
+    },
+    {
+    "ProspectID":"2",
+    "FirstName":"Nathan",
+    "LastName": "Volk",
+    "Email":"nathanvolk98@gmail.com",
+    "VehicleID": "2",
+    "UserID":"1"
+    }
+]

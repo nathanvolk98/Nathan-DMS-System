@@ -1,0 +1,140 @@
+.header-blue {
+    background:linear-gradient(135deg, #172a74, #21a9af);
+    background-color:#184e8e;
+    padding-bottom:80px;
+    font-family:'Source Sans Pro', sans-serif;
+  }
+  
+  @media (min-width:768px) {
+    .header-blue {
+      padding-bottom:30px;
+    }
+  }
+  
+  .header-blue .action-button, .header-blue .action-button:not(.disabled):active {
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:40px;
+    color:#ebeff1;
+    box-shadow:none;
+    width: 100%;
+    position: absolute;
+    text-shadow:none;
+    padding:.3rem .8rem;
+    background:transparent;
+    transition:background-color 0.25s;
+    outline:none;
+  }
+  
+  .header-blue .action-button:hover {
+    color:#fff;
+  }
+  
+  .header-blue .hero {
+    margin-top:20px;
+    text-align:center;
+  }
+  
+  @media (min-width:768px) {
+    .header-blue .hero {
+      margin-top:60px;
+      text-align:left;
+    }
+  }
+  
+  .header-blue .hero h1 {
+    color:#fff;
+    font-size:40px;
+    margin-top:0;
+    margin-bottom:15px;
+    font-weight:300;
+    line-height:1.4;
+    
+  }
+  
+  @media (min-width:992px) {
+    .header-blue .hero h1 {
+      margin-top:190px;
+      margin-bottom:24px;
+      line-height:1.2;
+    }
+  }
+  
+  .header-blue .hero p {
+    color:rgba(255,255,255,0.8);
+    font-size:20px;
+    margin-bottom:30px;
+    font-weight:300;
+  }
+  
+  .header-blue .phone-holder {
+    text-align:right;
+
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+    background: #F5F1EE;
+    font-family: 'Roboto', sans-serif
+}
+
+.card {
+    width: 250px;
+    border-radius: 5px;
+    
+    
+}
+
+.card-img-top {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px
+}
+
+span.text-muted {
+    font-size: 12px
+}
+
+small.text-muted {
+    font-size: 8px
+}
+
+h5.mb-0 {
+    font-size: 1rem
+}
+
+small.ghj {
+    font-size: 12px
+}
+
+.mid {
+    background: #ECEDF1
+}
+
+h6.ml-1 {
+    font-size: 13px
+}
+
+small.key {
+    text-decoration: underline;
+    font-size: 9px;
+    cursor: pointer
+}
+
+.btn-danger {
+    color: #FFCBD2
+}
+
+.btn-danger:focus {
+    box-shadow: none
+}
+
+small.justify-content-center {
+    font-size: 9px;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+@media screen and (max-width:600px) {
+    .col-sm-4 {
+        margin-bottom: 50px
+    }
+}
